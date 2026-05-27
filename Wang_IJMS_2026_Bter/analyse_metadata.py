@@ -1,5 +1,6 @@
 # %%
 import pandas as pd
+import subprocess
 # %%
 meta_experiment = pd.read_csv("./metadata/metadata_CNP0006161_experiment.tsv", sep="\t")
 meta_experiment
@@ -28,5 +29,7 @@ fq_link_merged = pd.merge(brains_df_simplify, fq_link, left_on="file_prefix", ri
 fq_link_merged
 # %%
 brain_link = fq_link_merged[1]
-brain_link.to_csv("./metadata/brain_fq_links.txt", index=False, header=False)
+brain_link.to_csv("./metadata/tmp.txt", index=False, header=False)
+# %%
+subprocess.run("sed 's/ftp:/https:/g' ./metadata/tmp.txt > ./metadata/brain_fq_links.txt", shell=True) # ftp不适用后续使用aria2c下载，替换为https
 # %%

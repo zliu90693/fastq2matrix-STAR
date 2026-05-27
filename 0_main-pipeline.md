@@ -11,3 +11,9 @@
   wget -c ftp://ftp.cngb.org/pub/CNSA/data7/public_info/CNP0006161/metadata_CNP0006161_experiment.tsv -O "./Wang_IJMS_2026_Bter/metadata/metadata_CNP0006161_experiment.tsv"
   wget -c ftp://ftp.cngb.org/pub/CNSA/data7/public_info/CNP0006161/metadata_CNP0006161_sample_Model_organism_or_animal_sample.tsv -O "./Wang_IJMS_2026_Bter/metadata/metadata_CNP0006161_sample_Model_organism_or_animal_sample.tsv"
   ```
+- Extract only the brain-specific entries from the complete list of fastq links using [analyse_metadata](./Wang_IJMS_2026_Bter/analyse_metadata.py)
+- Dowanload fastq using [download_fq.sh](./Wang_IJMS_2026_Bter/download_fq.sh)
+  ```bash
+  cd Wang_IJMS_2026_Bter
+  ./download_fq.sh
+  ```
