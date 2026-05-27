@@ -4,7 +4,10 @@
 
 ## Wang_IJMS_2026_Bter
 
-- This dataset is hosted on CNGB rather than NCBI; therefore, it cannot be downloaded using fasterq-dump.
+- This dataset is hosted on CNGB rather than NCBI; therefore, it cannot be downloaded using fasterq-dump. The fastq files are downloaded using the script `Bter_download`, located within the `Wang_IJMS_2026_Bter` directory.
+- Download fastq metadata manually from https://ftp.cngb.org/pub/CNSA/data7/public_info/CNP0006161/
   ```bash
-
+  wget -c ftp://ftp.cngb.org/pub/CNSA/data7/public_info/CNP0006161/data_download_links_CNP0006161_ftp.txt -O "./Wang_IJMS_2026_Bter/metadata/data_download_links_CNP0006161_ftp.txt"
+  wget -c ftp://ftp.cngb.org/pub/CNSA/data7/public_info/CNP0006161/metadata_CNP0006161_experiment.tsv -O "./Wang_IJMS_2026_Bter/metadata/metadata_CNP0006161_experiment.tsv"
+  wget -c ftp://ftp.cngb.org/pub/CNSA/data7/public_info/CNP0006161/metadata_CNP0006161_sample_Model_organism_or_animal_sample.tsv -O "./Wang_IJMS_2026_Bter/metadata/metadata_CNP0006161_sample_Model_organism_or_animal_sample.tsv"
   ```
